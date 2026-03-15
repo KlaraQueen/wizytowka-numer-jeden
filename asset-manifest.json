@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/wizytowka-numer-jeden/static/js/main.f7af03eb.js",
+    "static/media/pexels-artbovich-7031607.jpg": "/wizytowka-numer-jeden/static/media/pexels-artbovich-7031607.2e1a44e84c0ba5c6a32d.jpg",
+    "static/media/Gemini_Generated_Image_png": "/wizytowka-numer-jeden/static/media/Gemini_Generated_Image_6de5176de5176de5.43ebcf04a4689525c3c2.png",
+    "static/media/pexels-pixabay-280222.jpg": "/wizytowka-numer-jeden/static/media/pexels-pixabay-280222.f744bdd33214f608b6be.jpg",
+    "static/media/pexels-nord6-1590336.jpg": "/wizytowka-numer-jeden/static/media/pexels-nord6-1590336.3a5a07df1164539162cc.jpg",
+    "static/media/pexels-iriser-1122639.jpg": "/wizytowka-numer-jeden/static/media/pexels-iriser-1122639.75ffa52bffcda756d87a.jpg",
+    "static/media/pexels-pixabay-259588.png": "/wizytowka-numer-jeden/static/media/pexels-pixabay-259588.7fcd9e1d63507a2d0723.png",
+    "index.html": "/wizytowka-numer-jeden/index.html",
+    "main.f7af03eb.js.map": "/wizytowka-numer-jeden/static/js/main.f7af03eb.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.f7af03eb.js"
+  ]
+}
