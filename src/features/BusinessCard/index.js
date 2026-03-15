@@ -2,6 +2,7 @@ import Navigation from "./Navigation/index";
 import Hero from "./Hero/index";
 import Services from "./Services/index";
 import Pricing from "./Pricing/index";
+import Reviews from "./Reviews/index";
 import Team from "./Team/index";
 import About from "./About/index";
 import Gallery from "./Gallery/index";
@@ -27,6 +28,7 @@ const BusinessCard = () => {
           </S.GalleryArea>
         </S.TwoCol>
         <Pricing />
+        <Reviews />
         <S.ContactArea id="kontakt">
           <Contact />
         </S.ContactArea>

@@ -6,6 +6,7 @@ const navItems = [
   { id: "cennik", label: "Cennik" },
   { id: "zespol", label: "Nasz zespół" },
   { id: "realizacje", label: "Realizacje" },
+  { id: "opinie", label: "Opinie" },
   { id: "kontakt", label: "Kontakt" },
 ];
 
