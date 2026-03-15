@@ -17,7 +17,6 @@ const BusinessCard = () => {
       <S.Content>
         <Hero />
         <Services />
-        <Pricing />
         <Team />
         <S.TwoCol>
           <S.AboutArea id="o-nas">
@@ -27,6 +26,7 @@ const BusinessCard = () => {
             <Gallery />
           </S.GalleryArea>
         </S.TwoCol>
+        <Pricing />
         <S.ContactArea id="kontakt">
           <Contact />
         </S.ContactArea>
