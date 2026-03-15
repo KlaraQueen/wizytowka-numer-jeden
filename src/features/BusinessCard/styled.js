@@ -7,11 +7,14 @@ export const MainWrapper = styled.div`
 `;
 
 export const Header = styled.header`
-  background: linear-gradient(135deg, #ffffff 0%, ${({ theme }) => theme.color.backgroundAlt} 100%);
-  padding: 0 clamp(16px, 3vw, 32px);
+  background: ${({ theme }) => theme.color.background};
+  padding: 0 clamp(12px, 2.5vw, 32px);
   position: sticky;
   top: 0;
   z-index: 100;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-shadow: 0 1px 2px rgba(21, 42, 31, 0.04);
 `;
 
 export const Content = styled.main`

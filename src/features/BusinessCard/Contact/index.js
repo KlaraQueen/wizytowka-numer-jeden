@@ -1,9 +1,10 @@
 import * as S from "./styled";
 import { HiPhone, HiMail, HiLocationMarker } from "react-icons/hi";
-import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaYoutube, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 const socialLinks = [
   { icon: FaFacebookF, href: "https://facebook.com", label: "Facebook" },
+  { icon: FaYoutube, href: "https://youtube.com", label: "YouTube" },
   { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
   { icon: FaXTwitter, href: "https://x.com", label: "X (Twitter)" },
 ];
@@ -23,9 +24,9 @@ const Contact = () => {
                 ul. Przykładowa 15<br />
                 22-400 Przykład<br />
                 <S.Small>
-                NIP: 000-000-00-00<br />
-                REGON: 000000000
-              </S.Small>
+                  NIP: 000-000-00-00<br />
+                  REGON: 000000000
+                </S.Small>
               </S.Address>
             </S.Block>
           </S.Item>

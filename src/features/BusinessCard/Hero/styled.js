@@ -9,6 +9,11 @@ export const Section = styled.header`
   border-radius: 0 0 ${({ theme }) => theme.radius.lg} ${({ theme }) => theme.radius.lg};
   margin-bottom: clamp(24px, 3vw, 36px);
   overflow: hidden;
+
+  @media (max-width: 767px) {
+    min-height: 220px;
+    padding: 24px 16px;
+  }
 `;
 
 export const HeroImage = styled.img`
@@ -50,6 +55,10 @@ export const HeroContent = styled.div`
   align-items: center;
   justify-content: center;
   min-height: clamp(240px, 35vw, 292px);
+
+  @media (max-width: 767px) {
+    min-height: 160px;
+  }
 `;
 
 export const TextBlock = styled.div`
@@ -67,6 +76,10 @@ export const Tagline = styled.h1`
     0 0 8px rgba(255, 255, 255, 0.9),
     0 0 16px rgba(255, 255, 255, 0.7),
     0 1px 3px rgba(255, 255, 255, 0.95);
+
+  @media (max-width: 767px) {
+    margin: 0 0 10px;
+  }
 `;
 
 export const Description = styled.p`
@@ -79,6 +92,10 @@ export const Description = styled.p`
     0 0 6px rgba(255, 255, 255, 0.9),
     0 0 12px rgba(255, 255, 255, 0.6),
     0 1px 2px rgba(255, 255, 255, 0.9);
+
+  @media (max-width: 767px) {
+    margin: 0 auto 16px;
+  }
 `;
 
 export const CtaButton = styled.button`
@@ -101,6 +118,10 @@ export const CtaButton = styled.button`
 
   &:active {
     transform: translateY(-1px);
+  }
+
+  @media (max-width: 767px) {
+    padding: 12px 22px;
   }
 `;
 

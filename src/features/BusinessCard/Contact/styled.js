@@ -35,7 +35,7 @@ export const Wrapper = styled.div`
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
-  gap: clamp(8px, 1vw, 12px);
+  gap: clamp(10px, 1.2vw, 14px);
   flex: 1;
   min-width: 0;
   max-width: 100%;
@@ -58,13 +58,14 @@ export const Divider = styled.div`
     min-height: 70px;
     align-self: stretch;
   }
-`;
+ `;
 
 export const Item = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: flex-start;
   text-align: left;
+  width: 100%;
 `;
 
 export const Icon = styled.span`
@@ -84,6 +85,10 @@ export const Block = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2px;
+  align-items: flex-start;
+  text-align: left;
+  flex: 1;
+  min-width: 0;
 `;
 
 export const Label = styled.span`
