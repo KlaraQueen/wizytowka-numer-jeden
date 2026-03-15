@@ -64,13 +64,13 @@ export const NavLinks = styled.div`
 `;
 
 export const NavLink = styled.button`
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(21, 42, 31, 0.1);
+  background: transparent;
+  border: none;
   border-radius: ${({ theme }) => theme.radius.sm};
   font-size: clamp(6px, 0.9vw, 15px);
-  font-weight: 600;
+  font-weight: 700;
   color: ${({ theme }) => theme.color.text};
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8), 0 2px 4px rgba(21, 42, 31, 0.12);
   cursor: pointer;
   padding: clamp(6px, 0.6vw, 8px) clamp(12px, 1vw, 16px);
   font-family: inherit;
@@ -80,7 +80,7 @@ export const NavLink = styled.button`
   white-space: nowrap;
   flex-shrink: 0;
 
-  @media (max-width: 600px) {
+  @media (max-width: 767px) {
     font-size: clamp(6px, 2vw, 10px);
     padding: clamp(4px, 1vw, 6px) clamp(6px, 1.2vw, 10px);
   }
@@ -101,8 +101,7 @@ export const NavLink = styled.button`
 
   &:hover {
     color: ${({ theme }) => theme.color.secondary};
-    border-color: rgba(45, 138, 78, 0.25);
-    background: rgba(255, 255, 255, 1);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9), 0 2px 6px rgba(21, 42, 31, 0.15);
 
     &::after {
       width: calc(100% - 24px);
@@ -129,13 +128,13 @@ export const IconLink = styled.a`
   border-radius: ${({ theme }) => theme.radius.sm};
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(21, 42, 31, 0.1);
+  background: transparent;
+  border: none;
+  filter: drop-shadow(0 1px 2px rgba(21, 42, 31, 0.1));
 
   &:hover {
     color: ${({ theme }) => theme.color.primaryDark};
-    background: rgba(255, 255, 255, 1);
-    border-color: rgba(45, 138, 78, 0.25);
+    filter: drop-shadow(0 2px 4px rgba(21, 42, 31, 0.15));
     transform: translateY(-2px);
   }
 `;
