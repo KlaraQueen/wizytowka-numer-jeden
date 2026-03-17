@@ -1,22 +1,12 @@
 import { useState, useEffect } from "react";
 import * as S from "./styled";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
-import photo1 from "./Images/pexels-artbovich-7031607.jpg";
-import photo2 from "./Images/pexels-iriser-1122639.jpg";
-import photo3 from "./Images/pexels-nord6-1590336.jpg";
-import photo4 from "./Images/pexels-pixabay-280222.jpg";
-
-const photos = [
-  { src: photo1, alt: "Realizacja 1" },
-  { src: photo2, alt: "Realizacja 2" },
-  { src: photo3, alt: "Realizacja 3" },
-  { src: photo4, alt: "Realizacja 4" },
-];
+import { siteData } from "../../../siteData";
 
 const Gallery = () => {
+  const photos = siteData.images.gallery;
+  const { title } = siteData.gallery;
   const [selectedIndex, setSelectedIndex] = useState(null);
-
-  const selectedPhoto = selectedIndex !== null ? photos[selectedIndex] : null;
 
   const goPrev = (e) => {
     e.stopPropagation();
@@ -47,7 +37,7 @@ const Gallery = () => {
 
   return (
     <S.Section>
-      <S.Title>Nasze realizacje</S.Title>
+      <S.Title>{title}</S.Title>
       <S.Grid>
         {photos.map((photo, index) => (
           <S.ImageWrapper

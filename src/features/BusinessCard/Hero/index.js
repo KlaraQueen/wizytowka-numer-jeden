@@ -1,23 +1,22 @@
 import * as S from "./styled";
-import heroImage from "./Image/pexels-pixabay-259588.png";
+import { siteData } from "../../../siteData";
 
 const Hero = () => {
   const scrollToContact = () => {
     document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const { title, subtitle, buttonText } = siteData.hero;
+
   return (
     <S.Section>
-      <S.HeroImage src={heroImage} alt="" />
+      <S.HeroImage src={siteData.images.hero} alt="" />
       <S.HeroOverlay />
       <S.HeroContent>
         <S.TextBlock>
-          <S.Tagline>Dla naszej firmy Twój ogród jest najważniejszy.</S.Tagline>
-          <S.Description>
-            Zajmujemy się profesjonalnym projektowaniem oraz pielęgnacją terenów zielonych.
-            Stworzymy wymarzony ogród i zadbamy, by zachwycał przez cały rok.
-          </S.Description>
-          <S.CtaButton onClick={scrollToContact}>Skontaktuj się z nami</S.CtaButton>
+          <S.Tagline>{title}</S.Tagline>
+          <S.Description>{subtitle}</S.Description>
+          <S.CtaButton onClick={scrollToContact}>{buttonText}</S.CtaButton>
         </S.TextBlock>
       </S.HeroContent>
     </S.Section>

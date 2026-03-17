@@ -1,18 +1,24 @@
 import * as S from "./styled";
 import { HiPhone, HiMail, HiLocationMarker } from "react-icons/hi";
 import { FaFacebookF, FaYoutube, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { siteData } from "../../../siteData";
 
-const socialLinks = [
-  { icon: FaFacebookF, href: "https://facebook.com", label: "Facebook" },
-  { icon: FaYoutube, href: "https://youtube.com", label: "YouTube" },
-  { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: FaXTwitter, href: "https://x.com", label: "X (Twitter)" },
-];
+const socialIconMap = {
+  Facebook: FaFacebookF,
+  YouTube: FaYoutube,
+  Instagram: FaInstagram,
+  X: FaXTwitter,
+};
 
 const Contact = () => {
+  const { companyName } = siteData;
+  const { title, address, nip, regon, phone, phoneHref, email, emailHref, area, socialLinks } = siteData.contact;
+
+  const addressLines = address.split("\n");
+
   return (
     <S.Section>
-      <S.Title>Skontaktuj się</S.Title>
+      <S.Title>{title}</S.Title>
       <S.Wrapper>
         <S.Column>
           <S.Item>
@@ -20,12 +26,13 @@ const Contact = () => {
             <S.Block>
               <S.Label>Adres</S.Label>
               <S.Address>
-                Eko-Design Sp. z o.o.<br />
-                ul. Przykładowa 15<br />
-                22-400 Przykład<br />
+                {addressLines.map((line, i) => (
+                  <span key={i}>{line}{i < addressLines.length - 1 && <br />}</span>
+                ))}
+                <br />
                 <S.Small>
-                  NIP: 000-000-00-00<br />
-                  REGON: 000000000
+                  NIP: {nip}<br />
+                  REGON: {regon}
                 </S.Small>
               </S.Address>
             </S.Block>
@@ -37,33 +44,36 @@ const Contact = () => {
             <S.Icon><HiPhone /></S.Icon>
             <S.Block>
               <S.Label>Telefon</S.Label>
-              <S.Link href="tel:+48000000000">+48 000 000 000</S.Link>
+              <S.Link href={phoneHref}>{phone}</S.Link>
             </S.Block>
           </S.Item>
           <S.Item>
             <S.Icon><HiMail /></S.Icon>
             <S.Block>
               <S.Label>E-mail</S.Label>
-              <S.Link href="mailto:biuro@biuroeco.pl">przykład@biuroeco.pl</S.Link>
+              <S.Link href={emailHref}>{email}</S.Link>
             </S.Block>
           </S.Item>
           <S.Item>
             <S.Icon><HiLocationMarker /></S.Icon>
             <S.Block>
               <S.Label>Obszar działania</S.Label>
-              <S.Value>Zamość i okolice do 50 km</S.Value>
+              <S.Value>{area}</S.Value>
             </S.Block>
           </S.Item>
         </S.Column>
       </S.Wrapper>
       <S.SocialRow>
-        {socialLinks.map(({ icon: Icon, href, label }) => (
-          <S.SocialLink key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
-            <Icon />
-          </S.SocialLink>
-        ))}
+        {socialLinks.map(({ name, href }) => {
+          const Icon = socialIconMap[name];
+          return Icon ? (
+            <S.SocialLink key={name} href={href} target="_blank" rel="noopener noreferrer" aria-label={name}>
+              <Icon />
+            </S.SocialLink>
+          ) : null;
+        })}
       </S.SocialRow>
-      <S.Copyright>© {new Date().getFullYear()} Eko-Design. Wszelkie prawa zastrzeżone.</S.Copyright>
+      <S.Copyright>© {new Date().getFullYear()} {companyName}. Wszelkie prawa zastrzeżone.</S.Copyright>
     </S.Section>
   );
 };

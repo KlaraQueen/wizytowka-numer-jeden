@@ -1,26 +1,20 @@
 import * as S from "./styled";
-
-const prices = [
-  { service: "Koszenie trawy", price: "od 80 zł", desc: "jednorazowe koszenie" },
-  { service: "Pielęgnacja ogrodu", price: "od 150 zł", desc: "kompleksowa pielęgnacja" },
-  { service: "Trawa z rolki", price: "od 45 zł/m²", desc: "z przygotowaniem podłoża" },
-  { service: "Zakładanie ogrodu", price: "wycena indywidualna", desc: "projekt + realizacja" },
-  { service: "System nawadniający", price: "od 2500 zł", desc: "instalacja kompletna" },
-  { service: "Dojazd", price: "3 zł/km", desc: "usługa dojazdu  poza miastem" },
-];
+import { siteData } from "../../../siteData";
 
 const Pricing = () => {
+  const { label, title, subtitle, items } = siteData.pricing;
+
   return (
     <S.Section id="cennik">
-      <S.Label>Cennik</S.Label>
-      <S.Title>Orientacyjne ceny usług</S.Title>
-      <S.Subtitle>Ceny mogą się różnić w zależności od zakresu i lokalizacji. Skontaktuj się po wycenę.</S.Subtitle>
+      <S.Label>{label}</S.Label>
+      <S.Title>{title}</S.Title>
+      <S.Subtitle>{subtitle}</S.Subtitle>
       <S.Grid>
-        {prices.map((item, index) => (
+        {items.map((item, index) => (
           <S.Card key={index}>
-            <S.ServiceName>{item.service}</S.ServiceName>
+            <S.ServiceName>{item.name}</S.ServiceName>
             <S.Price>{item.price}</S.Price>
-            <S.Desc>{item.desc}</S.Desc>
+            <S.Desc>{item.unit}</S.Desc>
           </S.Card>
         ))}
       </S.Grid>

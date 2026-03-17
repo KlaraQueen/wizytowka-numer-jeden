@@ -1,48 +1,20 @@
 import * as S from "./styled";
-import teamPhoto from "./Image/Gemini_Generated_Image_6de5176de5176de5.png";
-
-const employees = [
-  {
-    name: "Marek Kowalski",
-    role: "Właściciel",
-    description: "Kieruje firmą i nadzoruje realizację projektów ogrodniczych.",
-  },
-  {
-    name: "Katarzyna Nowak",
-    role: "Projektantka ogrodów",
-    description: "Tworzy projekty terenów zielonych i aranżacje roślinne.",
-  },
-  {
-    name: "Tomasz Wiśniewski",
-    role: "Specjalista ds. nawadniania",
-    description: "Projektuje i montuje systemy nawadniające.",
-  },
-  {
-    name: "Anna Lewandowska",
-    role: "Ogrodnik – pielęgnacja",
-    description: "Pielęgnuje ogrody i dba o rośliny przez cały rok.",
-  },
-  {
-    name: "Piotr Dąbrowski",
-    role: "Specjalista ds. trawników",
-    description: "Zakłada i pielęgnuje trawniki z rolki.",
-  },
-];
+import { siteData } from "../../../siteData";
 
 const Team = () => {
+  const { companyName, images } = siteData;
+  const { label, title, description, employees } = siteData.team;
+
   return (
     <S.Section id="zespol">
       <S.Wrapper>
         <S.TextBlock>
-          <S.Label>Poznaj nas</S.Label>
-          <S.Title>Nasz zespół</S.Title>
-          <S.Description>
-            Doświadczeni fachowcy z pasją do zieleni. Tworzymy ogrody, 
-            które zachwycają – od projektu po pielęgnację przez cały rok.
-          </S.Description>
+          <S.Label>{label}</S.Label>
+          <S.Title>{title}</S.Title>
+          <S.Description>{description}</S.Description>
         </S.TextBlock>
         <S.ImageWrapper>
-          <S.TeamImage src={teamPhoto} alt="Zespół Eko-Design - usługi ogrodnicze" />
+          <S.TeamImage src={images.team} alt={`Zespół ${companyName} - usługi ogrodnicze`} />
         </S.ImageWrapper>
       </S.Wrapper>
 

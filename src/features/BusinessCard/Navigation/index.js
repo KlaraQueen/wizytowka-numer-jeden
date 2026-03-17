@@ -1,18 +1,10 @@
 import * as S from "./styled";
 import { HiPhone, HiMail } from "react-icons/hi";
 import { FaFacebookF, FaYoutube, FaInstagram, FaXTwitter } from "react-icons/fa6";
-
-const navItems = [
-  { id: "o-nas", label: "O nas" },
-  { id: "uslugi", label: "Usługi" },
-  { id: "cennik", label: "Cennik" },
-  { id: "zespol", label: "Nasz zespół" },
-  { id: "realizacje", label: "Realizacje" },
-  { id: "opinie", label: "Opinie" },
-  { id: "kontakt", label: "Kontakt" },
-];
+import { siteData } from "../../../siteData";
 
 const Navigation = () => {
+  const { companyName, contact, nav } = siteData;
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     el?.scrollIntoView({ behavior: "smooth" });
@@ -23,31 +15,27 @@ const Navigation = () => {
       <S.TopRow>
         <S.Logo href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
           <S.LogoIcon />
-          <S.LogoText>Eko-Design</S.LogoText>
+          <S.LogoText>{companyName}</S.LogoText>
         </S.Logo>
         <S.IconLinks>
-        <S.IconLink href="tel:+48000000000" aria-label="Telefon">
+        <S.IconLink href={contact.phoneHref} aria-label="Telefon">
           <HiPhone />
         </S.IconLink>
-        <S.IconLink href="mailto:biuro@biuroeco.pl" aria-label="E-mail">
+        <S.IconLink href={contact.emailHref} aria-label="E-mail">
           <HiMail />
         </S.IconLink>
-        <S.IconLink href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <FaFacebookF />
-        </S.IconLink>
-        <S.IconLink href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-          <FaYoutube />
-        </S.IconLink>
-        <S.IconLink href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <FaInstagram />
-        </S.IconLink>
-        <S.IconLink href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">
-          <FaXTwitter />
-        </S.IconLink>
+        {contact.socialLinks.map(({ name, href }) => {
+          const Icon = { Facebook: FaFacebookF, YouTube: FaYoutube, Instagram: FaInstagram, X: FaXTwitter }[name];
+          return Icon ? (
+            <S.IconLink key={name} href={href} target="_blank" rel="noopener noreferrer" aria-label={name}>
+              <Icon />
+            </S.IconLink>
+          ) : null;
+        })}
       </S.IconLinks>
       </S.TopRow>
       <S.NavLinks>
-        {navItems.map((item) => (
+        {nav.items.map((item) => (
           <S.NavLink key={item.id} onClick={() => scrollTo(item.id)}>
             {item.label}
           </S.NavLink>
