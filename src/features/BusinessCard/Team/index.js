@@ -4,38 +4,28 @@ import teamPhoto from "./Image/Gemini_Generated_Image_6de5176de5176de5.png";
 const employees = [
   {
     name: "Marek Kowalski",
-    age: 55,
     role: "Właściciel",
-    education: "Technikum Ogrodnicze w Lublinie",
-    experience: "35 lat doświadczenia w branży ogrodniczej",
+    description: "Kieruje firmą i nadzoruje realizację projektów ogrodniczych.",
   },
   {
     name: "Katarzyna Nowak",
-    age: 42,
     role: "Projektantka ogrodów",
-    education: "Wydział Architektury Krajobrazu SGGW Warszawa",
-    experience: "18 lat w projektowaniu terenów zielonych",
+    description: "Tworzy projekty terenów zielonych i aranżacje roślinne.",
   },
   {
     name: "Tomasz Wiśniewski",
-    age: 38,
     role: "Specjalista ds. nawadniania",
-    education: "Technikum Ogrodnicze, kursy instalatorskie",
-    experience: "15 lat doświadczenia",
+    description: "Projektuje i montuje systemy nawadniające.",
   },
   {
     name: "Anna Lewandowska",
-    age: 35,
     role: "Ogrodnik – pielęgnacja",
-    education: "Technikum Ogrodnicze w Zamościu",
-    experience: "12 lat w pielęgnacji ogrodów",
+    description: "Pielęgnuje ogrody i dba o rośliny przez cały rok.",
   },
   {
     name: "Piotr Dąbrowski",
-    age: 40,
     role: "Specjalista ds. trawników",
-    education: "Technikum Ogrodnicze, kursy zieleni miejskiej",
-    experience: "14 lat w zakładaniu i pielęgnacji trawników",
+    description: "Zakłada i pielęgnuje trawniki z rolki.",
   },
 ];
 
@@ -60,16 +50,8 @@ const Team = () => {
         {employees.map((emp, index) => (
           <S.EmployeeCard key={index}>
             <S.EmployeeName>{emp.name}</S.EmployeeName>
-            <S.EmployeeMeta>{emp.age} lat</S.EmployeeMeta>
             <S.EmployeeRole>{emp.role}</S.EmployeeRole>
-            <S.EmployeeDetail>
-              <S.DetailLabel>Wykształcenie</S.DetailLabel>
-              <S.DetailValue>{emp.education}</S.DetailValue>
-            </S.EmployeeDetail>
-            <S.EmployeeDetail>
-              <S.DetailLabel>Doświadczenie</S.DetailLabel>
-              <S.DetailValue>{emp.experience}</S.DetailValue>
-            </S.EmployeeDetail>
+            <S.EmployeeDesc>{emp.description}</S.EmployeeDesc>
           </S.EmployeeCard>
         ))}
       </S.EmployeesGrid>

@@ -122,24 +122,12 @@ export const EmployeeCard = styled.div`
 export const EmployeeName = styled.h3`
   font-size: 14px;
   color: ${({ theme }) => theme.color.secondary};
-  margin: 0 0 2px;
+  margin: 0 0 4px;
   font-weight: 700;
 
   @media (min-width: 768px) {
     font-size: clamp(16px, 1.4vw, 18px);
-    margin: 0 0 4px;
-  }
-`;
-
-export const EmployeeMeta = styled.span`
-  font-size: 11px;
-  color: ${({ theme }) => theme.color.textMuted};
-  display: block;
-  margin-bottom: 6px;
-
-  @media (min-width: 768px) {
-    font-size: clamp(13px, 1.2vw, 14px);
-    margin-bottom: 8px;
+    margin: 0 0 6px;
   }
 `;
 
@@ -153,46 +141,19 @@ export const EmployeeRole = styled.p`
 
   @media (min-width: 768px) {
     font-size: clamp(14px, 1.3vw, 15px);
-    margin: 0 0 12px;
-    padding-bottom: 12px;
+    margin: 0 0 10px;
+    padding-bottom: 10px;
   }
 `;
 
-export const EmployeeDetail = styled.div`
-  margin-bottom: 8px;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-
-  @media (min-width: 768px) {
-    margin-bottom: 12px;
-  }
-`;
-
-export const DetailLabel = styled.span`
-  display: block;
-  font-size: 9px;
-  color: ${({ theme }) => theme.color.textMuted};
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 600;
-  margin-bottom: 2px;
-
-  @media (min-width: 768px) {
-    font-size: clamp(11px, 1vw, 12px);
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-  }
-`;
-
-export const DetailValue = styled.span`
+export const EmployeeDesc = styled.p`
   font-size: 12px;
-  color: ${({ theme }) => theme.color.text};
+  color: ${({ theme }) => theme.color.textMuted};
   line-height: 1.4;
+  margin: 0;
 
   @media (min-width: 768px) {
-    font-size: clamp(14px, 1.2vw, 15px);
+    font-size: clamp(13px, 1.2vw, 14px);
     line-height: 1.5;
   }
 `;
