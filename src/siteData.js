@@ -60,7 +60,7 @@ export const siteData = {
   },
 
   reviews: {
-    label: "Opinie Google",
+    label: "Opinie",
     title: "Co mówią o nas klienci",
     items: [
       { author: "Anna K.", text: "Profesjonalna obsługa od A do Z. Trawnik wygląda teraz rewelacyjnie, a koszenie jest zawsze na czas. Polecam Eko-Design każdemu, kto szuka solidnej firmy ogrodniczej.", rating: 5 },
